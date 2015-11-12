@@ -5,7 +5,7 @@
 Authors:
 
 * **Frank Gasking** (https://www.kent.ac.uk/psychology/people/gaskingf/)
-* **John Allen** (https://www.kent.ac.uk/psychology/people/allenj/index.html)
+* **John Allen** (https://www.kent.ac.uk/psychology/people/allenj/)
 
 This set of workshops/training material was written by Frank Gasking and John Allen (both Experimental Officers) for the **School of Psychology** (http://www.kent.ac.uk/psychology) at the **University of Kent** (http://www.kent.ac.uk).
 
