@@ -1,12 +1,14 @@
 #Psychopy training workshops
 
-##An Introduction to PsychoPy and PsychoPy Intermediate
+##"An Introduction to PsychoPy" and "PsychoPy Intermediate"
 
 Authors:
-Frank Gasking (https://www.kent.ac.uk/psychology/people/gaskingf/)
-John Allen (https://www.kent.ac.uk/psychology/people/allenj/index.html)
 
-This set of workshops/training material was written by Frank Gasking and John Allen for the School of Psychology (http://www.kent.ac.uk/psychology) at the University of Kent (http://www.kent.ac.uk)
+* **Frank Gasking** (https://www.kent.ac.uk/psychology/people/gaskingf/)
+* **John Allen** (https://www.kent.ac.uk/psychology/people/allenj/index.html)
+
+This set of workshops/training material was written by Frank Gasking and John Allen (both Experimental Officers) for the **School of Psychology** (http://www.kent.ac.uk/psychology) at the **University of Kent** (http://www.kent.ac.uk).
+
 The materials are updated on a yearly basis also to incorporate any changes or new features, and the workshops are split into two sessions.
 
 ###Overview
