@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-This experiment was created using PsychoPy2 Experiment Builder (v1.82.01), February 04, 2016, at 10:30
+This experiment was created using PsychoPy2 Experiment Builder (v1.82.01), October 09, 2015, at 11:32
 If you publish work using this script please cite the relevant PsychoPy publications
   Peirce, JW (2007) PsychoPy - Psychophysics software in Python. Journal of Neuroscience Methods, 162(1-2), 8-13.
   Peirce, JW (2009) Generating stimuli for neuroscience using PsychoPy. Frontiers in Neuroinformatics, 2:10. doi: 10.3389/neuro.11.010.2008
@@ -20,8 +20,8 @@ _thisDir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(_thisDir)
 
 # Store info about the experiment session
-expName = u'stroop'  # from the Builder filename that created this script
-expInfo = {u'session': u'01', u'participant': u''}
+expName = 'stroop'  # from the Builder filename that created this script
+expInfo = {'participant':'', 'session':'01'}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False: core.quit()  # user pressed cancel
 expInfo['date'] = data.getDateStr()  # add a simple timestamp
@@ -33,7 +33,7 @@ filename = _thisDir + os.sep + u'data' + os.sep + '%s_%s' %(expInfo['participant
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='T:\\admin\\Technical\\training\\PsychoPy-Part1\\stroop\\stroop.psyexp',
+    originPath='T:\\admin\\Technical\\training\\PsychoPy-Part1\\picture-stroop-complete\\picture-stroop.psyexp',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 #save a log file for detail verbose info
@@ -46,7 +46,7 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
 # Setup the Window
 win = visual.Window(size=(1600, 1200), fullscr=True, screen=0, allowGUI=False, allowStencil=False,
-    monitor=u'testMonitor', color=u'black', colorSpace='rgb',
+    monitor='testMonitor', color='black', colorSpace='rgb',
     blendMode='avg', useFBO=True,
     units='norm')
 # store frame rate of monitor if we can measure it successfully
@@ -68,9 +68,15 @@ instrText = visual.TextStim(win=win, ori=0, name='instrText',
 trialClock = core.Clock()
 word = visual.TextStim(win=win, ori=0, name='word',
     text='default text',    font='Arial',
-    pos=[0, 0], height=0.2, wrapWidth=None,
+    pos=[0, 0.5], height=0.2, wrapWidth=None,
     color=1.0, colorSpace='rgb', opacity=1,
     depth=0.0)
+image = visual.ImageStim(win=win, name='image',
+    image='sin', mask=None,
+    ori=0, pos=[0, 0], size=[0.5, 0.5],
+    color=[1,1,1], colorSpace='rgb', opacity=1,
+    flipHoriz=False, flipVert=False,
+    texRes=128, interpolate=True, depth=-2.0)
 
 # Initialize components for Routine "thanks"
 thanksClock = core.Clock()
@@ -157,8 +163,8 @@ for thisComponent in instructComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials = data.TrialHandler(nReps=1, method='random', 
-    extraInfo=expInfo, originPath='T:\\admin\\Technical\\training\\PsychoPy-Part1\\stroop\\stroop.psyexp',
+trials = data.TrialHandler(nReps=5.0, method='random', 
+    extraInfo=expInfo, originPath='T:\\admin\\Technical\\training\\PsychoPy-Part1\\picture-stroop-complete\\picture-stroop.psyexp',
     trialList=data.importConditions('trialTypes.xlsx'),
     seed=None, name='trials')
 thisExp.addLoop(trials)  # add the loop to the experiment
@@ -184,10 +190,12 @@ for thisTrial in trials:
     word.setText(text)
     resp = event.BuilderKeyResponse()  # create an object of type KeyResponse
     resp.status = NOT_STARTED
+    image.setImage(imagePath)
     # keep track of which components have finished
     trialComponents = []
     trialComponents.append(word)
     trialComponents.append(resp)
+    trialComponents.append(image)
     for thisComponent in trialComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
@@ -233,6 +241,13 @@ for thisTrial in trials:
                 # a response ends the routine
                 continueRoutine = False
         
+        # *image* updates
+        if t >= 0.5 and image.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            image.tStart = t  # underestimates by a little under one frame
+            image.frameNStart = frameN  # exact frame index
+            image.setAutoDraw(True)
+        
         # check if all components have finished
         if not continueRoutine:  # a component has requested a forced-end of Routine
             break
@@ -269,7 +284,7 @@ for thisTrial in trials:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 1 repeats of 'trials'
+# completed 5.0 repeats of 'trials'
 
 # get names of stimulus parameters
 if trials.trialList in ([], [None], None):  params = []
