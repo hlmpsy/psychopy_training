@@ -1,27 +1,28 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-This experiment was created using PsychoPy2 Experiment Builder (v1.82.01), February 04, 2016, at 10:30
+This experiment was created using PsychoPy2 Experiment Builder (v1.82.01), September 20, 2016, at 15:15
 If you publish work using this script please cite the relevant PsychoPy publications
   Peirce, JW (2007) PsychoPy - Psychophysics software in Python. Journal of Neuroscience Methods, 162(1-2), 8-13.
   Peirce, JW (2009) Generating stimuli for neuroscience using PsychoPy. Frontiers in Neuroinformatics, 2:10. doi: 10.3389/neuro.11.010.2008
 """
 
 from __future__ import division  # so that 1/3=0.333 instead of 1/3=0
-from psychopy import visual, core, data, event, logging, sound, gui
+from psychopy import locale_setup, visual, core, data, event, logging, sound, gui
 from psychopy.constants import *  # things like STARTED, FINISHED
 import numpy as np  # whole numpy lib is available, prepend 'np.'
 from numpy import sin, cos, tan, log, log10, pi, average, sqrt, std, deg2rad, rad2deg, linspace, asarray
 from numpy.random import random, randint, normal, shuffle
 import os  # handy system and path functions
+import sys # to get file system encoding
 
 # Ensure that relative paths start from the same directory as this script
-_thisDir = os.path.dirname(os.path.abspath(__file__))
+_thisDir = os.path.dirname(os.path.abspath(__file__)).decode(sys.getfilesystemencoding())
 os.chdir(_thisDir)
 
 # Store info about the experiment session
-expName = u'stroop'  # from the Builder filename that created this script
-expInfo = {u'session': u'01', u'participant': u''}
+expName = 'stroop'  # from the Builder filename that created this script
+expInfo = {'participant':'', 'session':'01'}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False: core.quit()  # user pressed cancel
 expInfo['date'] = data.getDateStr()  # add a simple timestamp
@@ -33,7 +34,7 @@ filename = _thisDir + os.sep + u'data' + os.sep + '%s_%s' %(expInfo['participant
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='T:\\admin\\Technical\\training\\PsychoPy-Part1\\stroop\\stroop.psyexp',
+    originPath=u'X:\\training-materials\\PsychoPy-Part1\\stroop\\stroop.psyexp',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 #save a log file for detail verbose info
@@ -46,7 +47,7 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
 # Setup the Window
 win = visual.Window(size=(1600, 1200), fullscr=True, screen=0, allowGUI=False, allowStencil=False,
-    monitor=u'testMonitor', color=u'black', colorSpace='rgb',
+    monitor='testMonitor', color='black', colorSpace='rgb',
     blendMode='avg', useFBO=True,
     units='norm')
 # store frame rate of monitor if we can measure it successfully
@@ -158,7 +159,7 @@ routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
 trials = data.TrialHandler(nReps=1, method='random', 
-    extraInfo=expInfo, originPath='T:\\admin\\Technical\\training\\PsychoPy-Part1\\stroop\\stroop.psyexp',
+    extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('trialTypes.xlsx'),
     seed=None, name='trials')
 thisExp.addLoop(trials)  # add the loop to the experiment
@@ -214,7 +215,7 @@ for thisTrial in trials:
             resp.frameNStart = frameN  # exact frame index
             resp.status = STARTED
             # keyboard checking is just starting
-            resp.clock.reset()  # now t=0
+            win.callOnFlip(resp.clock.reset)  # t=0 on next screen flip
             event.clearEvents(eventType='keyboard')
         if resp.status == STARTED:
             theseKeys = event.getKeys(keyList=['left', 'down', 'right'])
@@ -330,5 +331,11 @@ while continueRoutine and routineTimer.getTime() > 0:
 for thisComponent in thanksComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
+# these shouldn't be strictly necessary (should auto-save)
+thisExp.saveAsWideText(filename+'.csv')
+thisExp.saveAsPickle(filename)
+logging.flush()
+# make sure everything is closed down
+thisExp.abort() # or data files will save again on exit
 win.close()
 core.quit()
