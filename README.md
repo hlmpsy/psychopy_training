@@ -13,7 +13,7 @@ The materials are updated on a yearly basis also to incorporate any changes or n
 
 ###Overview
 
-Each year, the School of Psychology fixes onto a particular version of PsychoPy for the academic year for consistency.  At present for 2015/16, PsychoPy is fixed at version 1.82.01 and the slides and examples reflect this (but should still be relevant for new releases).
+Each year, the School of Psychology fixes onto a particular version of PsychoPy for the academic year for consistency.  At present for 2016/17, PsychoPy is fixed at version 1.83.04 and the slides and examples reflect this (but should still be relevant for new releases).
 
 The target group for the slides are for users who have never worked with PsychoPy before.  The focus is just on Builder environment, with some brief Python exploration in the second part.
 
