@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy2 Experiment Builder (v1.82.01),
-    on October 12, 2017, at 10:18
+    on October 09, 2018, at 11:18
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -53,7 +53,7 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
 # Setup the Window
 win = visual.Window(
-    size=(1600, 1200), fullscr=True, screen=0,
+    size=(1920, 1080), fullscr=True, screen=0,
     allowGUI=False, allowStencil=False,
     monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
     blendMode='avg', useFBO=True)
@@ -107,7 +107,7 @@ fruit_text = visual.TextStim(win=win, name='fruit_text',
 combinedClock = core.Clock()
 combined_text = visual.TextStim(win=win, name='combined_text',
     text='default text',
-    font=u'Arial',
+    font='Arial',
     pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
     color=1.0, colorSpace='rgb', opacity=1,
     depth=0.0);

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy2 Experiment Builder (v1.83.04),
-    on January 18, 2018, at 11:16
+    on October 09, 2018, at 11:23
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -26,8 +26,8 @@ _thisDir = os.path.dirname(os.path.abspath(__file__)).decode(sys.getfilesystemen
 os.chdir(_thisDir)
 
 # Store info about the experiment session
-expName = u'experiment'  # from the Builder filename that created this script
-expInfo = {u'session': u'001', u'participant': u'', u'counterbalance': u'm'}
+expName = 'experiment'  # from the Builder filename that created this script
+expInfo = {u'gender': u'm', u'session': u'001', u'participant': u''}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False:
     core.quit()  # user pressed cancel
@@ -53,9 +53,9 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
 # Setup the Window
 win = visual.Window(
-    size=(1600, 1200), fullscr=True, screen=0,
+    size=(1920, 1080), fullscr=True, screen=0,
     allowGUI=False, allowStencil=False,
-    monitor=u'testMonitor', color=[0,0,0], colorSpace='rgb',
+    monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
     blendMode='avg', useFBO=True)
 # store frame rate of monitor if we can measure it
 expInfo['frameRate'] = win.getActualFrameRate()
@@ -70,17 +70,15 @@ startClock = core.Clock()
 #This # symbol is a comment by the way, which allows me to explain
 #what is going on here.
 
+#Set a default
+trialFile = "malenames.xlsx"
 
 #Fetch gender from the start list (which uses expInfo to find)
-group = expInfo['counterbalance']
+gender = expInfo['gender']
 
 #Check if we entered f or female, and set trialFile accordingly
-if group.strip() == "1":
-    trialFile = "CB1.xlsx" 
-elif group.strip() == "2":
-    trialFile = "CB2.xlsx" 
-elif group.strip() == "3":
-    trialFile = "CB3.xlsx" 
+if gender.strip().lower() == "f" or gender.strip().lower() == "female":
+    trialFile = "femalenames.xlsx" 
 
 #If it wasn't true, then trial file defaults to malenames.xlsx
 #Now lets carry on with the rest...
