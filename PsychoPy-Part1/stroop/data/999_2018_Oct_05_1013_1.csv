@@ -1,0 +1,7 @@
+text,corrAns,letterColor,trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,resp.keys,resp.corr,resp.rt,date,frameRate,expName,session,participant,
+red,down,green,0,0,0,1,right,0,1.30033447733,2018_Oct_05_1013,60.0955803767,stroop,01,999,
+blue,left,red,0,1,1,5,left,1,0.30036408361,2018_Oct_05_1013,60.0955803767,stroop,01,999,
+green,down,green,0,2,2,2,down,1,0.2005022089,2018_Oct_05_1013,60.0955803767,stroop,01,999,
+blue,right,blue,0,3,3,4,down,0,0.301349394955,2018_Oct_05_1013,60.0955803767,stroop,01,999,
+green,right,blue,0,4,4,3,right,1,0.100484800059,2018_Oct_05_1013,60.0955803767,stroop,01,999,
+red,left,red,0,5,5,0,left,1,0.0840546516702,2018_Oct_05_1013,60.0955803767,stroop,01,999,
